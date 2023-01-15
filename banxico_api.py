@@ -1,5 +1,7 @@
 """
-Módulo Responsável pelas funçõs de extração de séries da API do Banxico.
+Author: Victor Gimenes
+Date: 23/05/2022
+Módulo Responsável por armazenar as funções de extração de séries da API do Banxico.
 """
 
 import contextlib
@@ -8,11 +10,16 @@ import pandas as pd
 import numpy as np
 import xlwings as xw
 
-def get_series_from_api(series, init=False, end=False):
+def get_token()
+    """Token de cadastro no site do Banxico"""
+    return 'enter your token here'
+
+def get_series(series, init=False, end=False):
     """
-    Função criada para buscar séries históricas
+    Função reponsável pela extração da série de interesse
+    diretamente da API do Banxico.
     """
-    token = '50f9ebb667490db19e4c82ecdd2ece53372d7fa2bdf74618a1624940fa0b1bff'
+    token = get_token()
     serie_str = ','.join(series)
     url = f'https://www.banxico.org.mx/SieAPIRest/service/v1/series/{serie_str}' + '/datos/{y}/{z}'.format(y=init, z=end)
 
